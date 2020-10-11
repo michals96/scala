@@ -1,9 +1,12 @@
-object Hello {
-  def main(args: Array[String]): Unit = {
+object Lab1 {
 
-    print("Hello world!")
+  def firstTask(): Unit =
+  {
+    print("Hello world!\n")
 
+  }
 
+  def secondTask(): Unit ={
     // ************ TASK 1 ************************** //
     // Input two numbers (start, end) and print a list
     // of integers that from given distance.
@@ -12,5 +15,16 @@ object Hello {
     val list = List.range(first, last);
 
     list.foreach(number => print(s"$number"))
+  }
+
+  def thirdTask(): Unit ={
+
+  }
+  
+  def main(args: Array[String]): Unit = {
+
+    firstTask();
+    secondTask();
+
   }
 }
