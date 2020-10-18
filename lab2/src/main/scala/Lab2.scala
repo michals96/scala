@@ -1,6 +1,7 @@
 import trigonometric.calculate
 import array.nicePrint
 import charArgs.calculateChars
+import rectangle.call
 
 object Lab2 {
   def main(args: Array[String]): Unit ={
@@ -10,8 +11,9 @@ object Lab2 {
 
     // calculate(args(0), args(1));
     // nicePrint(x);
+    //calculateChars(args(0).charAt(0), args(1).charAt(0))
 
-    calculateChars(args(0).charAt(0), args(1).charAt(0))
+    call()
 
   }
 }
