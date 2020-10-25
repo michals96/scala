@@ -5,6 +5,7 @@ import firstTask.sumColumn
 import firstTask.transposeArray
 import firstTask.mergeArrays
 import scala.math.{Pi}
+import thirdTask.solveEquation
 
 object main {
 
@@ -35,6 +36,8 @@ object main {
     println(pi(pi))
     println(pi(pi(pi)))
     println(repN(5, (x:Int) => 2*x, 1))
+
+    solveEquation(("1 + 2"))
   }
 }
 
