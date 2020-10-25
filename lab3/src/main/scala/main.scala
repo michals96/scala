@@ -6,6 +6,7 @@ import firstTask.transposeArray
 import firstTask.mergeArrays
 import scala.math.{Pi}
 import thirdTask.solveEquation
+import fourthClass.foruthTask
 
 object main {
 
@@ -38,6 +39,8 @@ object main {
     println(repN(5, (x:Int) => 2*x, 1))
 
     solveEquation(("1 + 2"))
+    println()
+    foruthTask()
   }
 }
 
