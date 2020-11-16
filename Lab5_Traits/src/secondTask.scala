@@ -7,19 +7,20 @@ object secondTask {
   }
 
   trait TimeStamp extends Log{
-    override def pprint(s:String):Unit={
-      println(Calendar.getInstance().getTime() + " " + s)
+    abstract override def pprint(s:String):Unit={
+      print(Calendar.getInstance().getTime())
+      super.pprint(" " + s)
     }
   }
 
   trait Quote extends Log{
-    override def pprint(s:String):Unit={
-      println("''" + s + "''")
+    abstract override def pprint(s:String):Unit={
+      super.pprint(" ''" + s + "''")
     }
   }
 
-  class Logger() extends Log() {
-    override def pprint(s:String):Unit={println("Just the text")}
+  class Logger() extends Log(){
+    override def pprint(s:String):Unit={println(s)}
   }
 
   def runSecondTask(): Unit ={
