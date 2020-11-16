@@ -18,14 +18,13 @@ object secondTask {
     }
   }
 
-  class Logger() extends Log() with TimeStamp with Quote {
-    override def pprint(s:String):Unit={super.pprint(s)}
+  class Logger() extends Log() {
+    override def pprint(s:String):Unit={println("Just the text")}
   }
-
 
   def runSecondTask(): Unit ={
 
-    val l = new Logger with TimeStamp
+    val l = new Logger with Quote with TimeStamp
     l.pprint("Hello world") // Tue Nov 27 17:15:56 CET 2018 "Hello world"
 
     println("")
