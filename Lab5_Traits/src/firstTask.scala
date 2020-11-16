@@ -1,7 +1,6 @@
 import scala.annotation.tailrec
 
 object firstTask {
-
   class Angle(val x:Double){
     override def toString(): String ={
       x.toString()
@@ -23,8 +22,6 @@ object firstTask {
       Angle(this.x / that)
     }
   }
-
-
 
   object Angle{
 
