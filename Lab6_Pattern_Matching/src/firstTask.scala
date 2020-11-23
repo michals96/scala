@@ -27,7 +27,6 @@ object firstTask {
       mypos._1
     }
     def setY(x: Int): Unit ={
-      //ypos = x
       this.mypos = (this.mypos._1, x)
     }
     def setX(x: Int): Unit ={

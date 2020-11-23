@@ -22,18 +22,23 @@ object secondTask {
   def splitTags(str:String) =    str.replaceAll("<(.)>", "<|$1>").split('|').toList
 
   def parseToTree(str: String): Option[String] = {
-    Some("123")
+    Some(tagContent(str))
+
+    /*def parseToTreeImpl(str: String): String = str match {
+      case Some(str) => println(str)
+    }*/ 
   }
+
   def runSecondTask(): Unit ={
     println( parseToTree("t>1234<"))
     // Text(t,1234)
 
-    /*
+
     println( parseToTree("b>abcd<"))
     // Text(b,abcd)
 
     println( parseToTree("p>b>test1<b>test2<<"))
-    // Composite(p,List(Text(b,test1), Text(b,test2)))*/
+    // Composite(p,List(Text(b,test1), Text(b,test2)))
 
   }
 }
