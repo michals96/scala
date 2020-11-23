@@ -1,4 +1,26 @@
 object secondTask {
+  def findClosing(str: String, start: Int, delim: Char='<'): Int = {
+
+    var counter  = 1
+
+    for ( i <- start until str.length ){
+      val current = str(i)
+
+      counter = counter +
+      (if ( current == '>' ) 1
+      else if ( current == '<') -1
+      else 0)
+
+      if ( counter == 0 )
+        return i
+    }
+    return str.length
+  }
+
+  def tagContent(str: String ) =  str.substring(2, findClosing(str, 2))
+
+  def splitTags(str:String) =    str.replaceAll("<(.)>", "<|$1>").split('|').toList
+
   def parseToTree(str: String): Option[String] = {
     Some("123")
   }
@@ -11,9 +33,17 @@ object secondTask {
     // Text(b,abcd)
 
     println( parseToTree("p>b>test1<b>test2<<"))
-    // Composite(p,List(Text(b,test1), Text(b,test2)))
+    // Composite(p,List(Text(b,test1), Text(b,test2)))*/
 
-    val input =
+  }
+}
+/*
+Exercise 2
+
+The goal is to write a simple markup language parser using extractors. Specifically, the parseToTree function that converts the string like in an example has to be written.
+Using match case expression then write helper that would convert objects tree to HTML:
+
+val input =
 
       """p>
 
@@ -46,11 +76,3 @@ object secondTask {
 
     println( toHTML(parsed))
     // <p><p><h>header</h></p>  <p><t>par 1</t></p>  <h>par title</h>  <b>bold</b>  <i>italic</i>  <p><t>simple par wiht more text</t></p></p>*/
-  }
-}
-/*
-Exercise 2
-
-The goal is to write a simple markup language parser using extractors. Specifically, the parseToTree function that converts the string like in an example has to be written.
-Using match case expression then write helper that would convert objects tree to HTML:
-*/
