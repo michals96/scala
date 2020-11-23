@@ -1,34 +1,34 @@
 object firstTask {
 
   class Car ( var xpos: Int , var ypos: Int ) {
-    var posx = xpos
-    var posy = ypos
-    override def toString = "Car x: "+posx.toString + " y:"+posy.toString
+    override def toString =  "Car x: "+xpos.toString + " y:"+ypos.toString
   }
 
   class Horse ( var mypos: (Int, Int)) {
-    var posx = mypos._1
-    var posy = mypos._2
-    override def toString = "Horse x: "+posx.toString + " y:"+posy.toString
+    var xpos = mypos._1
+    var ypos = mypos._2
+    override def toString = "Horse x: "+xpos.toString + " y:"+ypos.toString
+
+
   }
 
   trait IntRichMoves{
-    var posx: Int
-    var posy: Int
+    var xpos: Int
+    var ypos: Int
 
-    def up():Unit = {posy = posy + 1}
-    def right(move: Int):Unit = {posx = posx + move}
-    def down(move: Int):Unit = {posy = posy - move}
-    def left(move: Int):Unit = {posx = posx - move}
+    def up():Unit = {ypos = ypos + 1}
+    def right(move: Int):Unit = {xpos = xpos + move}
+    def down(move: Int):Unit = {ypos = ypos - move}
+    def left(move: Int):Unit = {xpos = xpos - move}
 
     def here(obj: Car):Unit = {
-      posx = obj.posx
-      posy = obj.posy
+      xpos = obj.xpos
+      ypos = obj.ypos
     }
 
     def zero(): Unit = {
-      posx = 0
-      posy = 0
+      xpos = 0
+      ypos = 0
     }
   }
 
