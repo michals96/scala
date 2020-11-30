@@ -1,23 +1,23 @@
 object secondTask {
 
-  abstract class abstrT(val l: String){
-
-  }
+  abstract class abstrT(val l: String)
 
   case class SPair[+A, +B](x: A, y: B){
+    def _1(ti: T1I) = new SPair(ti, this.y)
+    def _2(t: T) = new SPair(this.x, t)
+
     def one: A = x
     def two: B = y
   }
-
   case class T(val lstr: String) extends abstrT(lstr)
 
   case class T1I(val key: Int) extends abstrT(key.toString)
 
-  def <<( t: SPair[abstrT,abstrT]) {
+  def <<(t: SPair[abstrT,abstrT]) {
     println(""+t.one +" "+ t.two)
   }
 
-  def runSecondTask(): Unit ={
+  def runSecondTask(): Unit = {
     val r = new SPair(1,3)
     println(""+r.one +" "+ r.two)
 
@@ -37,24 +37,3 @@ object secondTask {
     <<(krep2) // T1I(1) T(One)
   }
 }
-/*Exercise 2
-
-
-
-
-
-
-
- expected result
-
-
-
-
-
-
-
-
-
-
-
-  */
